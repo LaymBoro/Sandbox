@@ -42,13 +42,13 @@ public:
 	}
 
 	double Length(); // Рассчитать длину отрезка
-	void Sum(Vector &A, Vector &B); // Сумма векторов
-	void Difference(Vector &A, Vector &B); // Разность векторов
-	int ScalarProduct(Vector &A, Vector &B); // Скалярное произведение
+	void Sum(Vector& A, Vector& B); // Сумма векторов
+	void Difference(Vector& A, Vector& B); // Разность векторов
+	int ScalarProduct(Vector& A, Vector& B); // Скалярное произведение
 	void Print(); // Вывод элемента
 };
 
-void Vector::Sum(Vector &A, Vector &B)
+void Vector::Sum(Vector& A, Vector& B)
 {
 	x1 = A.x1 + B.x1;
 	y1 = A.y1 + B.y1;
@@ -62,7 +62,7 @@ void Vector::Sum(Vector &A, Vector &B)
 	cout << "x1 = " << D.x1 << ", y1 = " << D.y1 << "\n" << "x2 = " << D.x2 << ", y2 = " << D.y2;
 }
 
-void Vector::Difference(Vector &A, Vector &B)
+void Vector::Difference(Vector& A, Vector& B)
 {
 	int TranslocationX1 = A.x2 - A.x1;
 	int TranslocationY1 = A.y2 - A.y1;
@@ -81,7 +81,7 @@ double Vector::Length()
 	return sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
 }
 
-int Vector::ScalarProduct(Vector &A, Vector &B)
+int Vector::ScalarProduct(Vector& A, Vector& B)
 {
 	return(A.TranslocationX * B.TranslocationX + A.TranslocationY * B.TranslocationY);
 }
