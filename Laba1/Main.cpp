@@ -8,6 +8,9 @@ private:
 	int x2, y2; // Координаты точки2
 	int TranslocationX, TranslocationY;
 public:
+	
+	friend ostream& operator << (ostream& out, const Vector& g1);
+
 	Vector() // Конструктор1 (по умолчанию)
 	{
 		int x1 = 0;
@@ -17,6 +20,7 @@ public:
 		int TranslocationX = x2 - x1;
 		int TranslocationY = y2 - y1;
 	}
+
 	Vector(int a, int b, int c, int d) // Конструктор2 
 	{
 		int x1 = a;
@@ -26,6 +30,7 @@ public:
 		int TranslocationX = x2 - x1;
 		int TranslocationY = y2 - y1;
 	}
+
 	Vector(const Vector& P) // Конструктор3 
 	{
 		x1 = P.x1;
@@ -35,6 +40,7 @@ public:
 		int TranslocationX = x2 - x1;
 		int TranslocationY = y2 - y1;
 	}
+
 	double Length(); // Рассчитать длину отрезка
 	void Sum(Vector &A, Vector &B); // Сумма векторов
 	void Difference(Vector &A, Vector &B); // Разность векторов
@@ -87,12 +93,16 @@ void Vector::Print()
 
 int Main()
 {
+	Vector objVector(1, 6, 7, 5);
+	Vector gCopy(objVector);
+	cout << gCopy << "\n";
+
 	int x1, x2, y1, y2;
 	cin >> x1 >> y1 >> x2 >> y2;
 	Vector A(x1, y1, x2, y2);
 	Vector B(1, 6, 7, 5);
 	Vector C(A);
-	Vector G();
+	//Vector G();
 	//G.Print(); // Тест конструктора 1
 	A.Print(); // Тест конструктора 2
 	B.Print(); // Тест конструктора 2
